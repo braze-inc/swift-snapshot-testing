@@ -266,6 +266,7 @@ final class SnapshotTestingTests: XCTestCase {
     let label = NSTextField()
     label.frame = CGRect(origin: .zero, size: CGSize(width: 37, height: 16))
     label.backgroundColor = .white
+    label.textColor = .black
     label.isBezeled = false
     label.isEditable = false
     #endif
@@ -970,6 +971,7 @@ final class SnapshotTestingTests: XCTestCase {
     let webView = WKWebView()
     webView.loadHTMLString(html, baseURL: nil)
     if !ProcessInfo.processInfo.environment.keys.contains("GITHUB_WORKFLOW") {
+      // iOS 17: broken, the snapshot is an empty png
       assertSnapshot(
         matching: webView,
         as: .image(size: .init(width: 800, height: 600)),

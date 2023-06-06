@@ -1,5 +1,5 @@
 #if os(macOS)
-import Cocoa
+import AppKit
 
 extension Snapshotting where Value == NSViewController, Format == NSImage {
   /// A snapshot strategy for comparing view controller views based on pixel equality.
