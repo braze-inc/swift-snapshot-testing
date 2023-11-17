@@ -1,5 +1,5 @@
 #if os(macOS)
-import Cocoa
+import AppKit
 
 extension Snapshotting where Value == CGPath, Format == NSImage {
   /// A snapshot strategy for comparing bezier paths based on pixel equality.
